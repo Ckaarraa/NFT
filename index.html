@@ -28,14 +28,36 @@
         }
 
         .button-container button {
-            background: none;
-            border: none;
-            padding: 0;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #f5f5f5;
-            margin: 5px;
+           background: none;
+           border: none;
+           padding: 0;
+           font-size: 24px;
+           font-weight: bold;
+           cursor: pointer;
+           color: #f5f5f5;
+           margin: 5px;
+           position: relative;
+           overflow: hidden;
+        }
+
+        .button-container button::before {
+           content: '';
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           background: rgba(255, 255, 255, 0.1); /* Solma efekti rengi */
+           top: 0;
+           left: 0;
+           z-index: -1;
+           opacity: 0;
+           transition: opacity 0.3s ease-in-out;
+        }
+
+        .button-container button:hover::before {
+           opacity: 1;
+           transform: scale(1.2); /* Büyüme efekti */
+
+
         }
 
         .separator {
